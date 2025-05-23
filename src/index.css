@@ -1,13 +1,72 @@
+/* Default body styling */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Code styling */
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* Light theme styles */
+body.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.light a {
+  color: #1a202c; /* Dark text color for links in light mode */
+}
+
+body.light button {
+  background-color: #4caf50; /* Green button for light theme */
+  color: white;
+}
+
+/* Dark theme styles */
+body.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark a {
+  color: #b3b3b3; /* Light text color for links in dark mode */
+}
+
+body.dark button {
+  background-color: #6200ea; /* Purple button for dark theme */
+  color: white;
+}
+
+/* Additional styling for different sections to differentiate light and dark modes */
+body.light .navbar, 
+body.light .home, 
+body.light .about, 
+body.light .projects, 
+body.light .skills, 
+body.light .contact {
+  background-color: #f9f9f9;
+}
+
+body.dark .navbar, 
+body.dark .home, 
+body.dark .about, 
+body.dark .projects, 
+body.dark .skills, 
+body.dark .contact {
+  background-color: #1c1c1c;
+}
+
+/* Optional: Customize scrollbars for dark mode */
+body.dark::-webkit-scrollbar {
+  width: 8px;
+}
+
+body.dark::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 10px;
 }

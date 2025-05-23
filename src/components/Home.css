@@ -1,0 +1,317 @@
+/* Hero Section Styling */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 1rem;
+  background: #0e1117;
+  color: white;
+  text-align: center;
+}
+
+/* Hero Heading */
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content h2.typing-text {
+  font-size: 1.5rem;
+  color: #00ffc8;
+  min-height: 2rem;
+}
+
+/* Highlight text color */
+.highlight {
+  color: #00ffc8;
+}
+
+/* Resume Button Styling */
+.resume-button {
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;  
+    z-index: 10; /* Ensure it's above other elements */
+    position: relative; /* Make sure it's not covered by other elements */
+
+  
+}
+
+.resume-button:hover {
+  background-color: black;
+}
+
+/* Scroll Prompt Styling */
+.scroll-prompt {
+  margin-top: 3rem;
+  font-size: 1.2rem;
+  color: #00ffc8;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.scroll-prompt:hover {
+  transform: translateY(5px);
+}
+
+/* GitHub Calendar Styling */
+.github-calendar {
+  margin-top: 5rem;
+  background: #161b22;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 90%;
+  max-width: 700px;
+}
+
+/* Terminal-style wrapper for intro text */
+.terminal-wrapper {
+  background-color: black;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+  font-family: 'Courier New', Courier, monospace;
+  color: #00ff00;
+  margin-bottom: 20px;
+}
+
+.terminal-caret {
+  color: #00ff00;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Tech Stack Icons Styling */
+.tech-stack {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.tech-stack svg {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.tech-stack svg:hover {
+  transform: scale(1.2);
+}
+.glow {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+.tech-icon {
+  display: inline-block;
+  margin: 0 10px;
+  transition: transform 0.3s ease;
+}
+
+.tech-icon:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.greeting {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #ddd;
+}
+/* ===== Custom Animated Cyberpunk Cursor ===== */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  background: radial-gradient(circle, #00ffc8 20%, #a855f7 100%);
+  border-radius: 50%;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1) translate(-50%, -50%);
+  }
+  50% {
+    transform: scale(1.4) translate(-50%, -50%);
+  }
+}
+
+/* ===== Glassmorphism Panel for Terminal ===== */
+.terminal-wrapper {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 200, 0.3);
+  box-shadow: 0 0 20px rgba(0, 255, 200, 0.2), 0 0 10px rgba(168, 85, 247, 0.1);
+}
+
+/* ===== Particle Background Fullscreen ===== */
+#tsparticles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ===== Fade-in Up Animation for Hero Content ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content {
+  animation: fadeInUp 1.2s ease-out;
+}
+
+/* Optional: Glow on Typing Text */
+.typing-text {
+  text-shadow: 0 0 10px #00ffc8, 0 0 20px #00ffc8, 0 0 40px #00ffc8;
+}
+.hero-content * {
+  color: #00ffc8;
+  text-shadow: 0 0 10px #00ffc8, 0 0 20px #a855f7;
+}
+.sticky-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: var(--navbar-bg, rgba(0, 0, 0, 0.8));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.nav-link {
+  margin: 0 1rem;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+}
+.hero-section {
+  position: relative;
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #1a1a2e, #16213e);
+  color: #ffffff;
+  overflow: hidden;
+}
+.wave {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.terminal {
+  margin-bottom: 2rem;
+}
+
+.greeting {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #f8f9fa;
+}
+
+h1 {
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.highlight {
+  color: #00f0ff;
+  font-weight: bold;
+}
+
+.glow {
+  text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+}
+
+.typing-text {
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  color: #cfd8dc;
+}
+
+.resume-button {
+  background: linear-gradient(135deg, #00f0ff, #a100ff);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  margin-top: 2rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.2s;
+  box-shadow: 0 4px 15px rgba(0, 240, 255, 0.3);
+}
+
+.scroll-prompt {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.tech-stack {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  padding: 1rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+.tech-icon {
+  color: #00f0ff;
+  transition: transform 0.3s, color 0.3
+}

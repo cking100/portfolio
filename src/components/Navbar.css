@@ -1,0 +1,138 @@
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 10;
+  position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
+ 
+}
+
+/* Light and Dark mode styles for navbar */
+.navbar.light {
+  background-color: #eee;
+  color: #333;
+}
+
+.navbar.dark {
+  background-color: #222;
+  color: #fff;
+}
+
+/* Navbar links */
+.navbar-links {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.navbar-link {
+  color: inherit;
+  text-decoration: none;
+  font-size: 1.1rem;
+  margin-right: 1rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: #00ffc8; /* Highlight color */
+  transform: scale(1.1); /* Hover effect */
+}
+
+/* Navbar button */
+.navbar-button {
+  background-color: #00ffc8;
+  color: black;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-button:hover {
+  background-color: #00e6b8; /* Lighter shade for hover */
+  transform: scale(1.05); /* Hover effect */
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    width: auto;
+    margin-bottom: 1rem;
+  }
+
+  .navbar-link {
+    margin-bottom: 0.5rem;
+    color: #00ffc8;
+  text-shadow: 0 0 10px #00ffc8, 0 0 20px #a855f7;
+  }
+
+  .navbar-button {
+    margin-top: 1rem;
+  }
+}
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Themes */
+.navbar.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.navbar.dark {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.navbar.cyberpunk {
+  background-color: #0f0f0f;
+  color: #00fff7;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Links */
+.navbar-link {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Buttons */
+.navbar-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+
+.theme-toggle {
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: inherit;
+  font-size: 1rem;
+}
+
+.theme-toggle svg {
+  font-size: 1.2rem;
+}
+
