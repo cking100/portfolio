@@ -54,17 +54,29 @@
   background-color: rgba(0, 255, 255, 0.1);
   box-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
 }
-
-@media (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .contact-container {
     padding: 20px;
+    border-radius: 10px;
   }
 
   .contact-container h1 {
     font-size: 1.6rem;
+    margin-bottom: 12px;
   }
 
   .intro {
     font-size: 0.95rem;
+    margin: 8px 0 20px;
+  }
+
+  .contact-links a {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .contact-links a .icon {
+    font-size: 1rem;
+    margin-right: 8px;
   }
 }
