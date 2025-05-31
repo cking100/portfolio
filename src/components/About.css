@@ -6,25 +6,31 @@ body {
   font-family: 'Orbitron', 'Rajdhani', sans-serif;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 .about-section {
+  position: relative;
   background-color: #0d0d0d;
   padding: 3rem 1rem;
   min-height: 100vh;
+  z-index: 1;
 }
 
 .about-container {
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .about-title {
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 800;
   text-align: center;
   color: #00f0ff;
   margin-bottom: 3rem;
+  letter-spacing: 1px;
 }
 
 .about-grid {
@@ -35,15 +41,16 @@ body {
 
 .about-card {
   background-color: #1c1c1e;
-  border-left: 6px solid #00f0ff; 
+  border-left: 6px solid #00f0ff;
   border-radius: 1rem;
   padding: 1.5rem;
-  box-shadow: 0 8px 20px rgba(187, 134, 252, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 240, 255, 0.1);
   transition: all 0.3s ease;
+  cursor: grab;
 }
 
 .about-card:hover {
-  box-shadow: 0 12px 28px rgba(187, 134, 252, 0.3);
+  box-shadow: 0 12px 28px rgba(0, 240, 255, 0.3);
   transform: translateY(-4px);
 }
 
@@ -56,25 +63,27 @@ body {
 
 .about-icon {
   font-size: 1.75rem;
-  color: #fdd835; /* neon yellow accent */
+  color: #fdd835;
 }
 
 .about-card-title {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 700;
   color: #ffffff;
+  font-family: 'Rajdhani', sans-serif;
 }
 
-.about-text {
+.about-text,
+.about-list {
   color: #cccccc;
   line-height: 1.6;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
 }
 
 .about-list {
-  color: #cccccc;
   list-style-type: disc;
   padding-left: 1.25rem;
-  line-height: 1.6;
 }
 
 .about-footer {
@@ -85,4 +94,71 @@ body {
   max-width: 720px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Flip Card Styles */
+.flip-card {
+  width: 300px;
+  height: 200px;
+  margin: 3rem auto;
+  perspective: 1000px;
+  outline: none; /* To avoid outline on tab focus */
+}
+
+.flip-card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Flip on hover and on focus (for keyboard) and on active (for mobile tap) */
+.flip-card:hover .flip-card-inner,
+.flip-card:focus .flip-card-inner,
+.flip-card:active .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  color: white;
+  background-color: #1e1e2f;
+  border: 1px solid #00f0ff;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+/* Responsive tweaks */
+@media screen and (max-width: 768px) {
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .about-card-title {
+    font-size: 1.25rem;
+  }
+
+  .about-text,
+  .about-list {
+    font-size: 0.95rem;
+  }
+
+  .flip-card {
+    width: 90%;
+    height: 200px;
+  }
 }
