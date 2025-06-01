@@ -110,3 +110,39 @@
   background-color: #00d4e0;
   box-shadow: 0 0 20px #00f0ff;
 }
+
+/* --- Media Queries for Phones --- */
+@media screen and (max-width: 480px) {
+  .section-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  .animated-badge {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+
+  .future-section {
+    margin-top: 50px;
+    padding: 0 10px;
+    text-align: center;
+  }
+
+  .future-section h3 {
+    font-size: 22px;
+  }
+
+  .future-section ul li {
+    font-size: 14px;
+  }
+
+  .timeline {
+    padding-left: 20px;
+  }
+
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}

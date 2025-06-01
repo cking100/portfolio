@@ -176,3 +176,131 @@ button {
 button:hover {
   background-color: #00d4e0;
 }
+/* Small devices (mobile phones, less than 600px) */
+@media (max-width: 599px) {
+  #projects {
+    padding: 40px 10px;
+    margin-top: 60px;
+  }
+
+  .tech-filters {
+    gap: 0.3rem;
+  }
+
+  .tech-filters button {
+    padding: 8px 14px;
+    font-size: 14px;
+    margin: 3px;
+  }
+
+  .projects-carousel {
+    gap: 15px;
+  }
+
+  .project-card {
+    min-width: 260px;
+    max-width: 260px;
+  }
+
+  .project-card-content {
+    padding: 15px;
+  }
+
+  .project-title {
+    font-size: 18px;
+  }
+
+  .project-description {
+    font-size: 13px;
+  }
+
+  .tech-tag {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+
+  .modal-content {
+    max-width: 90%;
+    padding: 1.5rem;
+  }
+}
+
+/* Medium devices (tablets, 600px to 899px) */
+@media (min-width: 600px) and (max-width: 899px) {
+  #projects {
+    padding: 50px 15px;
+    margin-top: 80px;
+  }
+
+  .tech-filters button {
+    padding: 9px 18px;
+    font-size: 15px;
+  }
+
+  .projects-carousel {
+    gap: 18px;
+  }
+
+  .project-card {
+    min-width: 280px;
+    max-width: 280px;
+  }
+
+  .project-title {
+    font-size: 20px;
+  }
+
+  .project-description {
+    font-size: 14px;
+  }
+
+  .tech-tag {
+    font-size: 12px;
+    padding: 5px 9px;
+  }
+
+  .modal-content {
+    max-width: 450px;
+    padding: 1.75rem;
+  }
+}
+
+/* Large devices (desktops, 900px and above) */
+@media (min-width: 900px) {
+  #projects {
+    padding: 60px 20px;
+    margin-top: 100px;
+  }
+
+  .tech-filters button {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  .projects-carousel {
+    gap: 20px;
+  }
+
+  .project-card {
+    min-width: 300px;
+    max-width: 300px;
+  }
+
+  .project-title {
+    font-size: 22px;
+  }
+
+  .project-description {
+    font-size: 14px;
+  }
+
+  .tech-tag {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  .modal-content {
+    max-width: 500px;
+    padding: 2rem;
+  }
+}

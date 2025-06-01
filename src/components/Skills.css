@@ -1,71 +1,86 @@
-.skills {
-  min-height: 100vh;
+/* src/components/Skills.css */
+.skills-section {
   padding: 60px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
   color: #e0e0e0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
 }
 
 .skills-title {
-  font-size: 3em;
-  margin-bottom: 50px;
+  font-size: 2.5rem;
   font-weight: 800;
-  text-align: center;
   color: #00ffe7;
+  margin-bottom: 2rem;
   letter-spacing: 1px;
+}
+
+.filter-buttons {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-button {
+  background: transparent;
+  border: 2px solid #00ffe7;
+  color: #00ffe7;
+  padding: 0.5rem 1.2rem;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filter-button:hover,
+.filter-button.active {
+  background-color: #00ffe7;
+  color: #000;
 }
 
 .skills-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 40px;
-  width: 100%;
-  max-width: 1200px;
+  gap: 2.5rem; /* Increased gap for better spacing */
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-.skill-category {
-  flex: 1 1 300px;
-  padding: 25px;
-  border-radius: 16px;
+.skill-card {
   background-color: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 1.5rem;
+  width: 240px;
+  text-align: center;
   box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
-.skill-category:hover {
+.skill-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
 }
 
-.skill-category h3 {
-  font-size: 1.8em;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #00ffe7;
-  padding-bottom: 8px;
+.skill-icon {
+  font-size: 3rem;
   color: #00ffe7;
-  text-shadow: 0 0 10px #00ffe7;
-}
-
-.skill-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.skill-item {
-  display: flex;
-  flex-direction: column;
+  margin-bottom: 0.5rem;
+  animation: bounce 2s infinite ease-in-out;
 }
 
 .skill-name {
-  font-size: 1em;
-  margin-bottom: 6px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.skill-level {
+  font-size: 0.9rem;
   color: #bbb;
+  margin-bottom: 0.6rem;
 }
 
 .progress-bar {
@@ -83,11 +98,77 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 10px;
-  color: #000;
-  font-size: 0.8em;
+  padding-right: 8px;
+  font-size: 0.75rem;
   font-weight: bold;
+  color: #000;
   border-radius: 10px 0 0 10px;
   text-shadow: 0 0 5px #00ffe7;
   box-shadow: 0 0 10px #00ffe7, 0 0 20px #00ffe7;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Parallax wrapper to avoid overlap on vertical movement */
+.parallax-wrapper {
+  transition: transform 0.2s ease-out;
+  will-change: transform;
+  margin: 1rem 0; /* Added vertical margin */
+}
+
+/* Tablets */
+@media screen and (max-width: 768px) {
+  .skills-title {
+    font-size: 2rem;
+  }
+
+  .skill-card {
+    width: 100%;
+  }
+}
+
+/* Phones */
+@media screen and (max-width: 480px) {
+  .skills-title {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .filter-button {
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .skill-card {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .skill-icon {
+    font-size: 2.2rem;
+  }
+
+  .skill-name {
+    font-size: 1rem;
+  }
+
+  .skill-level {
+    font-size: 0.8rem;
+  }
+
+  .progress-bar {
+    height: 14px;
+  }
+
+  .progress-fill {
+    font-size: 0.65rem;
+    padding-right: 6px;
+  }
 }

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link as ScrollLink } from 'react-scroll';
-import { FaReact, FaNodeJs, FaDatabase } from 'react-icons/fa';
-import { SiMongodb, SiExpress } from 'react-icons/si';
+import { FaReact, FaNodeJs, FaDatabase, FaJava } from 'react-icons/fa';
+import { SiMongodb, SiExpress, SiSpring, SiDjango, SiMysql } from 'react-icons/si';
 import Particles from '@tsparticles/react';
 import ProjectShowcase from './ProjectShowcase';
 import MouseMoveEffect from './Mouse';
@@ -114,17 +114,17 @@ const Home = () => {
           <div className="tech-icon" title="React">
             <FaReact size={40} />
           </div>
-          <div className="tech-icon" title="Node.js">
-            <FaNodeJs size={40} />
+          <div className="tech-icon" title="Spring">
+            <SiSpring size={40} />
           </div>
-          <div className="tech-icon" title="Express.js">
-            <SiExpress size={40} />
+          <div className="tech-icon" title="Django">
+            <SiDjango size={40} />
           </div>
-          <div className="tech-icon" title="MongoDB">
-            <SiMongodb size={40} />
+          <div className="tech-icon" title="mysql">
+            <SiMysql size={40} />
           </div>
-          <div className="tech-icon" title="Database">
-            <FaDatabase size={40} />
+          <div className="tech-icon" title="java">
+            <FaJava size={40} />
           </div>
         </div>
 

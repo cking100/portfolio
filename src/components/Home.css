@@ -315,3 +315,75 @@ h1 {
   color: #00f0ff;
   transition: transform 0.3s, color 0.3
 }
+/* ========= MEDIA QUERIES ========= */
+
+/* For tablets and smaller (<=768px) */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 3rem 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content h2.typing-text {
+    font-size: 1.2rem;
+    min-height: 1.8rem;
+  }
+
+  .resume-button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .tech-stack {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .tech-icon {
+    font-size: 1.5rem;
+  }
+
+  .scroll-prompt {
+    font-size: 1rem;
+  }
+}
+
+/* For mobile phones (<=480px) */
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-content h2.typing-text {
+    font-size: 1rem;
+  }
+
+  .greeting {
+    font-size: 1rem;
+  }
+
+  .resume-button {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .tech-stack {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tech-icon {
+    font-size: 1.3rem;
+  }
+
+  .scroll-prompt {
+    font-size: 0.95rem;
+  }
+
+  .terminal-wrapper {
+    padding: 15px;
+  }
+}
