@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link as ScrollLink } from 'react-scroll';
-import { FaReact, FaNodeJs, FaDatabase, FaJava } from 'react-icons/fa';
-import { SiMongodb, SiExpress, SiSpring, SiDjango, SiMysql } from 'react-icons/si';
+import { FaReact,FaJava } from 'react-icons/fa';
+import {  SiSpring, SiDjango, SiMysql } from 'react-icons/si';
 import Particles from '@tsparticles/react';
 import ProjectShowcase from './ProjectShowcase';
 import MouseMoveEffect from './Mouse';
