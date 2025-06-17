@@ -1,306 +1,140 @@
-/* Base section styling */
+/* ===== Projects Section ===== */
 #projects {
-  padding: 60px 20px;
-  text-align: center;
+  padding: 30px 20px 20px;
   background-color: #111;
   color: #fff;
-}
-#projects {
-  margin-top: 100px; /* Adjust depending on the height of your wave */
-  padding: 60px 20px;
-  text-align: center;
-  background-color: #111;
-  color: #fff;
-  position: relative; /* Prepare for z-index if needed */
-  z-index: 1;
-}
-
-
-/* Tech filter buttons */
-.tech-filters {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: center;
-  margin-bottom: 2rem;
+  flex-direction: column;
+  gap: 30px;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 40px;
 }
 
-.tech-filters button {
-  background-color: #222;
-  border: 2px solid #00f0ff;
-  color: #00f0ff;
-  padding: 10px 20px;
-  margin: 5px;
-  font-size: 16px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+/* ===== Tech Filters Hidden ===== */
+.tech-filters {
+  display: none;
 }
 
-.tech-filters button.active {
-  background-color: #00f0ff;
-  color: #000;
-}
-
-/* Project cards container */
+/* ===== Projects Carousel ===== */
 .projects-carousel {
   display: flex;
-  overflow-x: auto;
-  gap: 20px;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  flex-grow: 1;
+  padding-bottom: 40px;
+  overflow-y: auto;
 }
 
-/* Project card */
+/* ===== Project Card ===== */
 .project-card {
-  min-width: 300px;
-  max-width: 300px;
-  background-color: #000;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 240, 255, 0.2);
-  scroll-snap-align: start;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-
-/* Card content */
-.project-card-content {
-  padding: 20px;
+  width: 300px;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  border-radius: 12px;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
-  border-radius: 10px;
-  color: #fff;
+  box-shadow: 0 0 15px rgba(0, 255, 200, 0.2);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.project-card-content {
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
 }
 
-/* Project details */
+/* ===== Project Text Styles ===== */
 .project-title {
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #00ffc8;
+  margin-bottom: 0.75rem;
 }
 
 .project-description {
-  font-size: 14px;
-  margin-bottom: 15px;
+  font-size: 1rem;
   color: #ccc;
+  flex-grow: 1;
+  margin-bottom: 1rem;
 }
 
 .project-tech-stack {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
+  margin-top: auto;
+  margin-bottom: 1rem;
 }
 
 .tech-tag {
-  background-color: #00f0ff;
-  color: #000;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 12px;
-  font-weight: bold;
+  display: inline-block;
+  background-color: #00ffc8;
+  color: #111;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  margin: 3px 4px 0 0;
 }
 
-/* Project links */
-.project-links {
-  margin-top: 15px;
-}
-
+/* ===== Project Links ===== */
 .project-links a {
-  color: #00f0ff;
-  margin: 0 10px;
-  text-decoration: none;
-  border: 1px solid #00f0ff;
-  padding: 6px 12px;
-  border-radius: 5px;
-  transition: all 0.3s ease;
+  color: #00ffc8;
+  text-decoration: underline;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 .project-links a:hover {
-  background-color: #00f0ff;
-  color: #000;
+  color: #a855f7;
 }
 
-/* Modal styles */
-.modal-backdrop {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0,0,0,0.9);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.modal-content {
-  background: #111;
-  color: #fff;
-  padding: 2rem;
-  border-radius: 10px;
-  max-width: 500px;
-  width: 90%;
-  position: relative;
-  box-shadow: 0 0 20px #00f0ff;
-}
-
-.modal-content h2 {
-  margin-top: 0;
-}
-
-.modal-content p {
-  margin-bottom: 1rem;
-  color: #ccc;
-}
-
-.modal-links a {
-  display: inline-block;
-  margin: 0.5rem 1rem 0 0;
-  color: #00f0ff;
-  text-decoration: underline;
-}
-
-button {
-  background-color: #00f0ff;
-  color: #000;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #00d4e0;
-}
-/* Small devices (mobile phones, less than 600px) */
-@media (max-width: 599px) {
+/* ===== Responsive Layout: Mobile & Tablets ===== */
+@media (max-width: 768px) {
   #projects {
-    padding: 40px 10px;
-    margin-top: 60px;
-  }
-
-  .tech-filters {
-    gap: 0.3rem;
-  }
-
-  .tech-filters button {
-    padding: 8px 14px;
-    font-size: 14px;
-    margin: 3px;
-  }
-
-  .projects-carousel {
-    gap: 15px;
-  }
-
-  .project-card {
-    min-width: 260px;
-    max-width: 260px;
-  }
-
-  .project-card-content {
-    padding: 15px;
-  }
-
-  .project-title {
-    font-size: 18px;
-  }
-
-  .project-description {
-    font-size: 13px;
-  }
-
-  .tech-tag {
-    font-size: 11px;
-    padding: 4px 8px;
-  }
-
-  .modal-content {
-    max-width: 90%;
-    padding: 1.5rem;
-  }
-}
-
-/* Medium devices (tablets, 600px to 899px) */
-@media (min-width: 600px) and (max-width: 899px) {
-  #projects {
-    padding: 50px 15px;
-    margin-top: 80px;
-  }
-
-  .tech-filters button {
-    padding: 9px 18px;
-    font-size: 15px;
-  }
-
-  .projects-carousel {
-    gap: 18px;
-  }
-
-  .project-card {
-    min-width: 280px;
-    max-width: 280px;
-  }
-
-  .project-title {
-    font-size: 20px;
-  }
-
-  .project-description {
-    font-size: 14px;
-  }
-
-  .tech-tag {
-    font-size: 12px;
-    padding: 5px 9px;
-  }
-
-  .modal-content {
-    max-width: 450px;
-    padding: 1.75rem;
-  }
-}
-
-/* Large devices (desktops, 900px and above) */
-@media (min-width: 900px) {
-  #projects {
-    padding: 60px 20px;
-    margin-top: 100px;
-  }
-
-  .tech-filters button {
-    padding: 10px 20px;
-    font-size: 16px;
-  }
-
-  .projects-carousel {
+    padding: 20px 10px 10px;
     gap: 20px;
   }
 
+  .projects-carousel {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 20px;
+  }
+
+  .projects-carousel::-webkit-scrollbar {
+    display: none;
+  }
+
   .project-card {
-    min-width: 300px;
+    flex: 0 0 auto;
+    width: 85%;
     max-width: 300px;
+    scroll-snap-align: start;
+  }
+
+  .project-card-content {
+    padding: 1rem;
   }
 
   .project-title {
-    font-size: 22px;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
   }
 
   .project-description {
-    font-size: 14px;
+    font-size: 0.95rem;
   }
 
   .tech-tag {
-    font-size: 12px;
-    padding: 5px 10px;
+    font-size: 0.75rem;
+    padding: 3px 6px;
   }
 
-  .modal-content {
-    max-width: 500px;
-    padding: 2rem;
+  .project-links a {
+    font-size: 0.95rem;
   }
 }
