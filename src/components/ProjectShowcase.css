@@ -1,56 +1,83 @@
 /* ===== Projects Section ===== */
 #projects {
-  padding: 30px 20px 20px;
+  padding: 30px 20px;
   background-color: #111;
   color: #fff;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
   position: relative;
   z-index: 2;
-  margin-bottom: 40px;
+  overflow: hidden;
 }
 
-/* ===== Tech Filters Hidden ===== */
+/* ===== Tech Filters ===== */
 .tech-filters {
-  display: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tech-filters button {
+  background: #222;
+  color: #00ffc8;
+  padding: 8px 16px;
+  border: 1px solid #00ffc8;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.tech-filters button:hover,
+.tech-filters button.active {
+  background: #00ffc8;
+  color: #111;
+}
+
+/* ===== Carousel Wrapper ===== */
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
 }
 
 /* ===== Projects Carousel ===== */
 .projects-carousel {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 2rem;
-  flex-grow: 1;
-  padding-bottom: 40px;
-  overflow-y: auto;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 20px;
+}
+
+.projects-carousel::-webkit-scrollbar {
+  display: none;
 }
 
 /* ===== Project Card ===== */
 .project-card {
-  width: 300px;
-  min-height: 320px;
+  min-width: 280px;
+  max-width: 300px;
+  flex: 0 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: stretch;
+  justify-content: space-between;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   box-shadow: 0 0 15px rgba(0, 255, 200, 0.2);
   transition: transform 0.3s ease;
-  flex-shrink: 0;
+  scroll-snap-align: start;
 }
 
 .project-card-content {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   height: 100%;
 }
 
-/* ===== Project Text Styles ===== */
 .project-title {
   font-size: 1.5rem;
   color: #00ffc8;
@@ -79,7 +106,6 @@
   margin: 3px 4px 0 0;
 }
 
-/* ===== Project Links ===== */
 .project-links a {
   color: #00ffc8;
   text-decoration: underline;
@@ -91,38 +117,85 @@
   color: #a855f7;
 }
 
-/* ===== Responsive Layout: Mobile & Tablets ===== */
+/* ===== Arrows for Mobile Slider ===== */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #00ffc8;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 3;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-arrow:hover {
+  background-color: rgba(0, 255, 200, 0.7);
+  color: #111;
+}
+
+.carousel-arrow.left {
+  left: 10px;
+}
+
+.carousel-arrow.right {
+  right: 10px;
+}
+
+/* ===== Modal ===== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: #1c1c1c;
+  color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 0 30px rgba(0, 255, 200, 0.3);
+}
+
+.modal-content h2 {
+  color: #00ffc8;
+  margin-bottom: 1rem;
+}
+
+.modal-links a {
+  color: #00ffc8;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.modal-content button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #00ffc8;
+  color: #111;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ===== Responsive Layout ===== */
 @media (max-width: 768px) {
-  #projects {
-    padding: 20px 10px 10px;
-    gap: 20px;
-  }
-
-  .projects-carousel {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 20px;
-  }
-
-  .projects-carousel::-webkit-scrollbar {
-    display: none;
-  }
-
   .project-card {
-    flex: 0 0 auto;
-    width: 85%;
-    max-width: 300px;
-    scroll-snap-align: start;
-  }
-
-  .project-card-content {
-    padding: 1rem;
+    min-width: 85%;
+    max-width: 90%;
   }
 
   .project-title {
     font-size: 1.3rem;
-    margin-bottom: 0.5rem;
   }
 
   .project-description {
@@ -136,5 +209,9 @@
 
   .project-links a {
     font-size: 0.95rem;
+  }
+
+  .carousel-arrow {
+    display: block;
   }
 }

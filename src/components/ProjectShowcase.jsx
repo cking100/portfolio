@@ -1,41 +1,56 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './ProjectShowcase.css';
 
 const ProjectShowcase = () => {
   const [filter, setFilter] = useState('All');
   const [selectedProject, setSelectedProject] = useState(null);
+  const carouselRef = useRef(null);
 
   const projects = [
     {
       title: 'Code Quest',
-      techStack: ['React', 'typescript', 'MySql'],
-      description: 'A full stack web app Like leetcode with Ai integration.',
+      techStack: ['React', 'TypeScript', 'MySQL'],
+      description: 'A full stack web app like LeetCode with AI integration.',
       github: 'https://github.com/cking100/CodeQuest',
-      details: 'This project is a problem solving webpage where users can solve different types of DSA problems with additional fun challenges'
+      details: 'Users can solve various DSA problems with AI-powered hints.'
     },
     {
-      title: 'Real time Chat Application',
-      techStack: ['Spring',  'My SQl', 'WebSocket'],
-      description: 'A real time chat application using websocket',
+      title: 'Real-time Chat Application',
+      techStack: ['Spring', 'MySQL', 'WebSocket'],
+      description: 'A real-time chat app using WebSocket.',
       github: 'https://github.com/cking100/spring-projects',
-      details: 'Users can chat at the same time it offers duplex communication'
+      details: 'Enables duplex communication between users in real-time.'
     },
     {
       title: 'Expense Tracker',
-      techStack: ['Spring',  'My Sql'],
-      description: 'A Spring project for managing expense.',
+      techStack: ['Spring', 'MySQL'],
+      description: 'Spring backend app for expense tracking.',
       github: 'https://github.com/cking100/expense-tracker',
-      details: 'A backend expense tracker used to manage budget monthly income and expenses'
+      details: 'Manage your income and expenses with this backend tracker.'
     },
   ];
 
-  const filteredProjects = filter === 'All' ? projects : projects.filter((project) =>
-    project.techStack.includes(filter)
-  );
+  const filteredProjects = filter === 'All'
+    ? projects
+    : projects.filter((project) =>
+        project.techStack.includes(filter)
+      );
+
+  // Scroll control for slider
+  const scrollCarousel = (direction) => {
+    const scrollAmount = 320;
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({
+        left: direction === 'next' ? scrollAmount : -scrollAmount,
+        behavior: 'smooth',
+      });
+    }
+  };
 
   return (
     <section id="projects">
+      {/* Tech Filters */}
       <nav className="tech-filters sticky-nav" aria-label="Filter projects by tech stack">
         {['All', 'React', 'Spring', 'Django'].map((tech) => (
           <button
@@ -49,7 +64,14 @@ const ProjectShowcase = () => {
         ))}
       </nav>
 
-      <div className="projects-carousel">
+      {/* Mobile Slider Arrows */}
+      <div className="slider-controls-mobile">
+        <button onClick={() => scrollCarousel('prev')} aria-label="Scroll left">&#8592;</button>
+        <button onClick={() => scrollCarousel('next')} aria-label="Scroll right">&#8594;</button>
+      </div>
+
+      {/* Projects Carousel */}
+      <div className="projects-carousel" ref={carouselRef}>
         {filteredProjects.map((project, index) => (
           <motion.div
             key={index}
@@ -77,6 +99,7 @@ const ProjectShowcase = () => {
         ))}
       </div>
 
+      {/* Modal */}
       <AnimatePresence>
         {selectedProject && (
           <motion.div
