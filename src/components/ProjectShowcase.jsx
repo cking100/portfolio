@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import './ProjectShowcase.css';
 
 const ProjectShowcase = () => {
-  const [filter, setFilter] = useState('All');
   const [selectedProject, setSelectedProject] = useState(null);
   const carouselRef = useRef(null);
 
@@ -13,31 +12,24 @@ const ProjectShowcase = () => {
       techStack: ['React', 'TypeScript', 'MySQL'],
       description: 'A full stack web app like LeetCode with AI integration.',
       github: 'https://github.com/cking100/CodeQuest',
-      details: 'Users can solve various DSA problems with AI-powered hints.'
+      details: 'Users can solve various DSA problems with AI-powered hints.',
     },
     {
       title: 'Real-time Chat Application',
       techStack: ['Spring', 'MySQL', 'WebSocket'],
       description: 'A real-time chat app using WebSocket.',
       github: 'https://github.com/cking100/spring-projects',
-      details: 'Enables duplex communication between users in real-time.'
+      details: 'Enables duplex communication between users in real-time.',
     },
     {
       title: 'Expense Tracker',
       techStack: ['Spring', 'MySQL'],
       description: 'Spring backend app for expense tracking.',
       github: 'https://github.com/cking100/expense-tracker',
-      details: 'Manage your income and expenses with this backend tracker.'
+      details: 'Manage your income and expenses with this backend tracker.',
     },
   ];
 
-  const filteredProjects = filter === 'All'
-    ? projects
-    : projects.filter((project) =>
-        project.techStack.includes(filter)
-      );
-
-  // Scroll control for slider
   const scrollCarousel = (direction) => {
     const scrollAmount = 320;
     if (carouselRef.current) {
@@ -50,40 +42,29 @@ const ProjectShowcase = () => {
 
   return (
     <section id="projects">
-      {/* Tech Filters */}
-      <nav className="tech-filters sticky-nav" aria-label="Filter projects by tech stack">
-        {['All', 'React', 'Spring', 'Django'].map((tech) => (
-          <button
-            key={tech}
-            onClick={() => setFilter(tech)}
-            className={filter === tech ? 'active' : ''}
-            aria-pressed={filter === tech}
-          >
-            {tech}
-          </button>
-        ))}
-      </nav>
+      <div className="swipe-hint">Swipe to see more →</div>
 
-      {/* Mobile Slider Arrows */}
       <div className="slider-controls-mobile">
-        <button onClick={() => scrollCarousel('prev')} aria-label="Scroll left">&#8592;</button>
-        <button onClick={() => scrollCarousel('next')} aria-label="Scroll right">&#8594;</button>
+        <button onClick={() => scrollCarousel('prev')} aria-label="Scroll left">
+          &#8592;
+        </button>
+        <button onClick={() => scrollCarousel('next')} aria-label="Scroll right">
+          &#8594;
+        </button>
       </div>
 
-      {/* Projects Carousel */}
       <div className="projects-carousel" ref={carouselRef}>
-        {filteredProjects.map((project, index) => (
+        {projects.map((project, index) => (
           <motion.div
             key={index}
             className="project-card"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => setSelectedProject(project)}
             tabIndex={0}
-            role="button"
-            aria-label={`Open modal for ${project.title}`}
+            role="group"
+            aria-label={`Card for ${project.title}`}
           >
-            <div className="project-card-content glass">
+            <div className="project-card-content">
               <h3 className="project-title">{project.title}</h3>
               <p className="project-description">{project.description}</p>
               <div className="project-tech-stack">
@@ -92,8 +73,17 @@ const ProjectShowcase = () => {
                 ))}
               </div>
               <div className="project-links">
-                <a href={project.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href={project.github} target="_blank" rel="noopener noreferrer">
+                  GitHub
+                </a>
               </div>
+              <button
+                onClick={() => setSelectedProject(project)}
+                className="view-details-btn"
+                aria-label={`View details of ${project.title}`}
+              >
+                View Details
+              </button>
             </div>
           </motion.div>
         ))}
@@ -122,9 +112,13 @@ const ProjectShowcase = () => {
               <p>{selectedProject.description}</p>
               <p>{selectedProject.details}</p>
               <div className="modal-links">
-                <a href={selectedProject.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href={selectedProject.github} target="_blank" rel="noopener noreferrer">
+                  GitHub
+                </a>
               </div>
-              <button onClick={() => setSelectedProject(null)} aria-label="Close modal">Close</button>
+              <button onClick={() => setSelectedProject(null)} aria-label="Close modal">
+                Close
+              </button>
             </motion.div>
           </motion.div>
         )}
